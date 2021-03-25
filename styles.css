@@ -8,7 +8,6 @@ body{
     font-family: 'Open Sans', sans-serif;
     font-size: 14px;
     font-weight: 400 !important;
-    margin: 20px;
 }
 .attribution {
     font-size: 11px; text-align: center;
@@ -46,10 +45,18 @@ ul li a{
     text-align: center;
     min-width: 300px;
     padding: 60px 50px;
+    position: relative;
 }
 .introduction h2{
     font-size: 2em;
     margin-bottom: 20px;
+}
+.content{
+    position: relative;
+    bottom: 250px;
+}
+.illustration{
+    padding-bottom: 70px;
 }
 img{
     max-width: 100%;
@@ -98,6 +105,10 @@ figcaption{
     border-bottom: 1px solid #fff;
     color: hsl(0, 0%, 100%);
 }
+.quote{
+    position: relative;
+    top: 15px;
+}
 .testimonial-container{
     border: 1px solid hsl(219, 30%, 18%); 
     background-color:  hsl(219, 30%, 18%);
@@ -135,7 +146,7 @@ figcaption{
     background-color: hsl(218, 28%, 13%);
 }
 .dive{
-    height: 300px;
+    height: 400px;
     width: 80%;
     margin: 0 auto;
     padding: 70px 30px;
@@ -225,12 +236,13 @@ i:hover{
 @media(max-width:789px){
     .features{
         grid-template-columns: 1fr;
+        grid-row-gap: 70px;
     }
     .benefit{
         grid-template-columns: 1fr;
     }
     .testimonial-container{
-        width: 80%;
+        width: 100%;
         margin-bottom: 10px;
     }
     .sub-testimonial{
@@ -252,7 +264,27 @@ i:hover{
     .socials ul li{
         margin: 0 auto;
     }
+    .bg-image{
+        background-image: url("images/bg-curvy-mobile.svg");
+        height: 200px;
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: cover;
+        width: 100%;
+    }
 }
+    @media only screen and (min-width:790px) {
+        .bg-image{
+            background-image: url("images/bg-curvy-desktop.svg");
+            height: 500px;
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size: cover;
+        }
+        .content{
+            bottom: 300px;
+        }
+    }
 @media only screen and (min-width:900px){
     .benefit{
         min-width: 900px;
@@ -261,11 +293,4 @@ i:hover{
         line-height: 3em;
         margin-top: 40px;
     }
-    .bg-image{
-        background-image: url(images/bg-curvy-desktop.svg);
-        background-position: center;
-        background-size: cover;
-        background-repeat: no-repeat;
-    }
-    
 }
