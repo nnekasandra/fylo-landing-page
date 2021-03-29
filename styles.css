@@ -18,7 +18,7 @@ body{
 header{
     display: flex;
     justify-content: space-between;
-    padding-top: 10px;
+    padding: 10px 5px;
     font-family: 'Raleway', sans-serif; 
 }
 h2{
@@ -50,10 +50,6 @@ ul li a{
 .introduction h2{
     font-size: 2em;
     margin-bottom: 20px;
-}
-.content{
-    position: relative;
-    bottom: 250px;
 }
 .illustration{
     padding-bottom: 70px;
@@ -234,9 +230,13 @@ i:hover{
     background-color: hsl(216, 53%, 9%);
 }
 @media(max-width:789px){
+    nav ul li{
+    display: inline-block;
+    padding: 10px;
+}
     .features{
         grid-template-columns: 1fr;
-        grid-row-gap: 70px;
+        grid-row-gap: 100px;
     }
     .benefit{
         grid-template-columns: 1fr;
@@ -261,6 +261,10 @@ i:hover{
     .item1{
         margin-left: 30px;
     }
+    .socials{
+        grid-column: 1/-1;
+        text-align: center;
+    }
     .socials ul li{
         margin: 0 auto;
     }
@@ -270,19 +274,23 @@ i:hover{
         background-repeat: no-repeat;
         background-position: center;
         background-size: cover;
-        width: 100%;
+    }
+    .content{
+        position: relative;
+        bottom: 100px;
     }
 }
     @media only screen and (min-width:790px) {
         .bg-image{
             background-image: url("images/bg-curvy-desktop.svg");
-            height: 500px;
+            height: 400px;
             background-repeat: no-repeat;
             background-position: center;
             background-size: cover;
         }
         .content{
-            bottom: 300px;
+            position: relative;
+            bottom: 400px;
         }
     }
 @media only screen and (min-width:900px){
