@@ -279,7 +279,10 @@ i:hover{
     }
     .content{
         position: relative;
-        bottom: 50px;
+        bottom: 150px;
+    }
+    button{
+        width: 200px;
     }
 }
     @media only screen and (min-width:790px) {
