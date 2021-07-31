@@ -7,7 +7,7 @@ body{
     color: #fff;
     font-family: 'Open Sans', sans-serif;
     font-size: 14px;
-    font-weight: 400 !important;
+    font-weight: 400;
 }
 .attribution {
     font-size: 11px; text-align: center;
@@ -16,26 +16,42 @@ body{
     color: hsl(228, 45%, 44%); 
 }
 header{
+    background-color: hsl(217, 28%, 15%);
     display: flex;
-    padding: 10px 5px;
-    font-family: 'Raleway', sans-serif; 
-}
-h2{
-    font-family: 'Raleway', sans-serif; 
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    height: 70px;
 }
 nav ul{
     list-style: none;
+    display: flex;
+    flex-wrap: wrap;
 }
 nav ul li{
-    display: inline-block;
-    padding: 30px;
+    margin: 5px;
+    padding: 10px;
 }
 nav ul li a{
+    text-decoration: none;
     color: #fff;
-    font-size: 16px;
+    font-size: 18px;
 }
-nav ul li a:hover{
-    border-bottom: 1px solid hsl(0, 0%, 100%)
+#check{
+    display: none;
+}
+.toggle i{
+    font-size: 30px;
+    color: #fff;
+    cursor: pointer;
+    display: none;
+} 
+h2{
+    font-family: 'Raleway', sans-serif; 
+}
+header > img{
+    margin-left: 20px;
+    padding: 20px;
 }
 ul li a{
     text-decoration: none;
@@ -56,7 +72,8 @@ ul li a{
 img{
     max-width: 100%;
 }
-header,.introduction{
+header,
+.introduction{
     background-color:hsl(217, 28%, 15%) ;
 }
 button{
@@ -213,7 +230,7 @@ input{
 .item4 ul li,.item5 ul li{
     margin-bottom: 10px;
 }
-i{
+ul li i{
     border-radius: 50%;
     border: 1px solid #fff;
     padding: 10px;
@@ -222,20 +239,43 @@ i{
     float: left;
     padding: 5px;
 }
-i:hover{
+ul li i:hover{
     color: hsl(176, 68%, 64%);
 }
 .links, footer{
     background-color: hsl(216, 53%, 9%);
 }
 @media(max-width:789px){
-    nav ul li{
-    display: inline-block;
-    padding: 10px;
-}
+    .toggle i{
+        display: block;
+    }
     nav ul{
-    margin-left:  30px;
-}
+        position: fixed;
+        top: 50px;
+        transform: translateX(100%);
+        right: 0;
+        flex-direction: column;
+        width: 100%;
+        z-index: 2;
+        transition: all 2s;
+        height: 100vh;
+        background-color: hsl(217, 28%, 15%);
+        overflow: hidden;
+    }
+    #check:checked ~ nav ul{
+        transform: translateX(50%);
+    }
+    nav ul li{
+        margin-top: 20px;
+        padding: 20px;
+    }
+    nav ul li a{
+        font-size: 25px;
+    }
+    .content{
+        position: relative;
+        bottom: 400px;
+    }
     .features{
         grid-template-columns: 1fr;
         grid-row-gap: 100px;
@@ -285,7 +325,7 @@ i:hover{
         width: 200px;
     }
 }
-    @media only screen and (min-width:790px) {
+    @media (min-width:790px) {
         .bg-image{
             background-image: url("images/bg-curvy-desktop.svg");
             height: 400px;
@@ -297,11 +337,8 @@ i:hover{
             position: relative;
             bottom: 400px;
         }
-        header{
-            justify-content: space-between;
-        }
     }
-@media only screen and (min-width:900px){
+@media only screen and (max-width:900px){
     .benefit{
         min-width: 900px;
     }
